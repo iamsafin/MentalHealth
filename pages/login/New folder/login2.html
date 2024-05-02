@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>registration</title>
+</head>
+<body>
+	<section class="user">
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">Don't have an account?</h2>
+        <p class="user_unregistered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
+        <button class="user_unregistered-signup" id="signup-button">Sign up</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">Have an account?</h2>
+        <p class="user_registered-text">Login for more fun!!.</p>
+        <button class="user_registered-login" id="login-button">Login</button>
+      </div>
+    </div>
+
+    <div class="user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+        <h2 class="forms_title">Login</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="Email" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Password" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+            <input type="submit" value="Log In" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+
+      <div class="user_forms-signup">
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form" id="registrationForm" action="register.php" method="post">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="text" placeholder="Full Name" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="email" placeholder="Email" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Password" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Address" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="tel" placeholder="Mobile" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <select id="countryCode" name="countryCode" required>
+                <option value="">Select Country Code</option>
+                <option value="+1">+1 (USA)</option>
+                <option value="+44">+44 (UK)</option>
+                <!-- Add more country codes as needed -->
+              </select>
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="submit" value="Sign up" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+<!--  <script>
+        // JavaScript validation
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const gender = document.getElementById("gender");
+    const address = document.getElementById("address");
+    const mobile = document.getElementById("mobile");
+    //const countryCode = document.getElementById("countryCode");
+    const terms = document.getElementById("terms");
+
+    if (
+        name.value.trim() === "" ||
+        email.value.trim() === "" ||
+        password.value.trim() === "" ||
+        gender.value === "" ||
+        address.value.trim() === "" ||
+        mobile.value.trim() === "" ||
+        countryCode.value === "" 
+        // ||
+        // !terms.checked
+    ) {
+        alert("Please fill in all fields and accept the terms and conditions.");
+        return;
+    }
+
+    // Send the form data to the server using fetch API
+    const formData = new FormData(event.target);
+    fetch("register.php", {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+        // Handle the server response, e.g., show a success message or redirect to a new page
+    })
+    .catch(error => {
+        console.error(error);
+        // Handle the error, e.g., show an error message
+    });
+});
+    </script> -->
+<script type="text/javascript"> 
+
+const signupButton = document.getElementById('signup-button'),
+    loginButton = document.getElementById('login-button'),
+    userForms = document.getElementById('user_options-forms')
+
+/**
+ * Add event listener to the "Sign Up" button
+ */
+signupButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceRight')
+  userForms.classList.add('bounceLeft')
+}, false)
+
+/**
+ * Add event listener to the "Login" button
+ */
+loginButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceLeft')
+  userForms.classList.add('bounceRight')
+}, false)
+</script>
+</html>

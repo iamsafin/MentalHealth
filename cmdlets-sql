@@ -1,0 +1,28 @@
+//create database 
+
+
+CREATE DATABASE mindful;
+
+
+// create tables and others
+
+CREATE TABLE mindful.users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    address VARCHAR(255),
+    mobile VARCHAR(15),
+    country_code VARCHAR(5)
+);
+
+
+
+//show all column
+SHOW COLUMNS FROM mindful.users;
+
+///show all data
+SHOW * FROM mindful.users;
+
+
